@@ -9,6 +9,8 @@ RUN apk update && \
     apk add git
 RUN go get github.com/xtaci/kcptun/client && go get github.com/xtaci/kcptun/server
 RUN go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
-EXPOSE 29900/udp # for kcp server
-EXPOSE 8888 # for shadowsocks
+# for kcp server
+EXPOSE 29900/udp 
+# for shadowsocks
+EXPOSE 8888 
 CMD /usr/local/run.sh
